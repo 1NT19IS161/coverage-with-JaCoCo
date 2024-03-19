@@ -1,0 +1,27 @@
+package coverage.jacoco; 
+  
+import static org.junit.jupiter.api.Assertions.*; 
+import org.junit.jupiter.api.Test; 
+import coverage.jacoco.App; 
+  
+public class AppTest { 
+  
+    String input1 = "noon"; 
+    App app = new App(); 
+    boolean expected=true; 
+  
+    @Test
+    public void isPalindromeTest() { 
+        assertTrue(app.isPalindrome(input1)); 
+    } 
+  
+    @Test
+    public void isNotPalindromeTest() { 
+        assertFalse(app.isPalindrome("abc")); 
+    } 
+  
+    @Test
+    public void isNotPalindromeExceptionTest() { 
+        assertThrows(IllegalArgumentException.class, () -> app.isPalindrome(null)); 
+    } 
+} 
